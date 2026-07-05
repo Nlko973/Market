@@ -1,0 +1,47 @@
+﻿<Window x:Class="Market.Sales" WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Market"
+        mc:Ignorable="d"
+            Title="Проведение продаж" Height="450" Width="633" MinWidth="633" MaxWidth="633" MinHeight="450" MaxHeight="450" Icon="/img/logo.ico" Background="#FFC9F3F7">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Padding" Value="5,1,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="10" BorderThickness="1" BorderBrush="Gray" Background="White">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Button x:Name="exit_btn" Content="Выход" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="exit_btn_Click"/>
+        <TextBox x:Name="search" HorizontalAlignment="Left" Margin="102,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298"/>
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="58,5,0,0" VerticalAlignment="Top" Height="24"/>
+        <Label Content="Введите название или штрих-код" HorizontalAlignment="Left" Margin="108,26,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="search_btn" Content="Поиск" HorizontalAlignment="Left" Margin="430,10,0,0" VerticalAlignment="Top" Width="40" Click="Search_btn_Click"/>
+        <Button x:Name="clear_btn" Content="Очистить" HorizontalAlignment="Left" Margin="475,10,0,0" VerticalAlignment="Top" Click="Clear_btn_Click"/>
+        <Label Content="Товары" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Корзина" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ListBox x:Name="products_list" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,74,233,251" SelectionChanged="Products_list_SelectionChanged"/>
+        <ListBox x:Name="shopping_cart" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="9,208,233,25"/>
+        <TextBox x:Name="product_count" HorizontalAlignment="Left" Margin="447,98,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="36"/>
+        <Button x:Name="reduce_count_btn" Content="-" HorizontalAlignment="Left" Margin="491,98,0,0" VerticalAlignment="Top" Width="19" FontWeight="Bold" Height="18" Click="Reduce_count_btn_Click"/>
+        <Button x:Name="Increase_count_btn" Content="+" HorizontalAlignment="Left" Margin="515,98,0,0" VerticalAlignment="Top" Width="19" Height="18" Click="Increase_count_btn_Click"/>
+        <Button x:Name="add_product_btn" Content="Добавить" HorizontalAlignment="Left" Margin="447,121,0,0" VerticalAlignment="Top" Width="87" Click="Add_product_btn_Click"/>
+        <Button x:Name="remove_product_btn" Content="Удалить" HorizontalAlignment="Left" Margin="447,226,0,0" VerticalAlignment="Top" Width="120" Click="Remove_product_btn_Click"/>
+        <CheckBox x:Name="electronic_receipt" Content="Электронный чек" HorizontalAlignment="Left" Margin="447,251,0,0" VerticalAlignment="Top" Width="120" Checked="electronic_receipt_Checked"/>
+        <CheckBox x:Name="printing_receipt" Content="Печать чека" HorizontalAlignment="Left" Margin="447,271,0,0" VerticalAlignment="Top" Checked="printing_receipt_Checked"/>
+        <Label Content="Сумма покупки:" HorizontalAlignment="Left" Margin="449,293,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="449,316,0,0" VerticalAlignment="Top" Width="100" Fill="White" RadiusY="5" RadiusX="5" Stroke="#FF707070"/>
+        <Label x:Name="output_amount" Content="00.00R" HorizontalAlignment="Left" Margin="455,320,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="make_purchase_btn" Content="Оформить покупку" HorizontalAlignment="Left" Margin="447,361,0,0" VerticalAlignment="Top" Width="120" Click="Make_purchase_btn_Click"/>
+    </Grid>
+</Window>
