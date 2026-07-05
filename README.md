@@ -1,5 +1,5 @@
 # Market - WPF Client Application
-
+> 🌐 Language Notice: The application interface (WPF client) is in Russian (RU).
 ## 📌 Project Overview
 
 **Market** is the client-side desktop application of a retail automation system developed as part of a diploma project for  
