@@ -7,7 +7,10 @@
 
 The application is built using WPF and communicates with a backend system via REST API.
 
----
+It works together with the backend API:
+
+📎 Backend repository: https://github.com/Nlko973/Market-backend
+
 
 ## 🧩 Client Responsibilities
 
@@ -69,5 +72,3 @@ The client application provides:
 ```bash
 git clone https://github.com/Nlko973/Market.git
 ```
-
-📎 Backend repository: https://github.com/Nlko973/Market-backend
